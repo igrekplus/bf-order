@@ -1,0 +1,29 @@
+#!/usr/bin/node
+const service = require("..")();
+const env = process.env.NODE_ENV || 'development';
+
+// start
+service.on('ready', function () {
+  console.log('Service is up and running on ' + this.getBaseUrl());
+});
+service.on('end', function () {
+  console.log('service stopped');
+});
+service.start();
+
+if (process.platform === "win32") {
+  require("readline")
+    .createInterface({
+      input: process.stdin,
+      output: process.stdout
+    })
+    // for app termination
+    .on("SIGINT", function () {
+      process.emit("SIGINT");
+    });
+}
+
+process.on('SIGINT', function () {
+  service.stop();
+  process.exit(0);
+});

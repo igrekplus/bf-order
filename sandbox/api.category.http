@@ -1,0 +1,9 @@
+@auth = dev_users ?nriin2017?
+@url = http://localhost:8997/
+@serviceName = category
+
+### Get All
+GET {{url}}{{serviceName}}
+
+### Get one
+GET {{url}}{{serviceName}}/{{id}}

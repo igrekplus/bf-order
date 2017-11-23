@@ -1,0 +1,38 @@
+{
+  "name": "order",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start-dev": "set DEBUG=mst-svc:* && set NODE_ENV=development&& .\\node_modules\\.bin\\nodemon .\\.bin\\www",
+    "lint": "eslint --fix src/** test/**"
+  },
+  "author": "Ryo Nagata",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "celebrate": "^5.0.1",
+    "cors": "^2.8.4",
+    "debug": "^3.1.0",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "joi": "^13.0.1",
+    "jsonwebtoken": "^8.1.0",
+    "klaw-sync": "^3.0.0",
+    "moment": "^2.19.1",
+    "morgan": "^1.9.0",
+    "pouchdb": "^6.3.4",
+    "pug": "^2.0.0-rc.4",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-things": "^0.2.0",
+    "eslint": "^4.9.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "nyc": "^11.2.1",
+    "randomstring": "^1.1.5",
+    "supertest": "^3.0.0"
+  }
+}

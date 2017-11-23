@@ -1,0 +1,47 @@
+extends layout
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 #{price} #{result}
+
+        // register form
+        form(method='POST' action='/order')
+          div.form-group
+            label(for='parent') Parent: 
+            input#parent.form-control(value=price,type='text',name='parent')
+          div.form-group
+            .radio
+              label(for='buy') BUY
+              input#buy.form-radio(type='radio',name='buysell' value='buy' checked)
+              label(for='sell') SELL
+              input#sell.form-radio(type='radio',name='buysell' value='sell')
+          div.form-group
+            label(for='number') number to put:
+            select#number.select.form-control.input-lg(name='number',onchange='calc()')
+              option(value='1') 1
+              option(value='2') 2
+              option(value='3',selected= true) 3
+              option(value='4') 4
+              option(value='5') 5
+          div.form-group
+            label(for='profit') Profit Plus:
+            select#profit.select.form-control.input-lg(name='profit',onchange='calc()')
+              option(value='5000',selected= true) 5,000
+              option(value='10000') 10,000
+              option(value='15000') 15,000
+              option(value='20000') 20,000
+              option(value='25000') 25,000
+            div#profitValue 25000
+            div#earning 10000
+          div.form-group
+            label(for='losscut') Loss Cut :
+            select#losscut.select.form-control.input-lg(name='losscut',onchange='calc()')
+              option(value='5000') 5,000
+              option(value='10000',selected= true) 10,000
+              option(value='15000') 15,000
+              option(value='20000') 20,000
+              option(value='25000') 25,000
+            div#losscutValue 25000
+            div#loss 10000
+          button.btn.btn-primary(type='submit') Order

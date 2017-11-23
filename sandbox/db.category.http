@@ -1,0 +1,28 @@
+@auth = dev_users ?nriin2017?
+@url = 
+@database = category
+
+@category = {"id":"123","name":"game","sub_category":[{"id":"123","name":"consumer"}]}
+
+
+### Get All
+
+GET {{url}}{{database}}/_all_docs?include_docs=true&limit=0
+Authorization:Basic {{auth}}
+
+### Create sample record
+POST {{url}}{{database}}
+Authorization:Basic {{auth}}
+content-type: application/json
+
+{{category}}
+
+### Delete database
+DELETE {{url}}{{database}}
+Authorization:Basic {{auth}}
+content-type: application/json
+
+### Create new database
+PUT {{url}}{{database}}
+Authorization:Basic {{auth}}
+content-type: application/json
