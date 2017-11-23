@@ -123,7 +123,9 @@ function _bootstrap(express) {
 
   express.use(helmet());
 
-  express.use(bodyParser.urlencoded({ extended: true }));
+  express.use(bodyParser.urlencoded({
+    extended: true
+  }));
   express.use(bodyParser.json());
 
   express.use(cors());
