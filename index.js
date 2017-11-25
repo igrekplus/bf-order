@@ -20,7 +20,7 @@ function Manager() {
   // Default configuration
   let options = {
     ipAddress: '0.0.0.0',
-    port: 8997
+    port: 80
   };
 
   // private methods
