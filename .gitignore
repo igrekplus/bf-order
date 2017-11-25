@@ -1,7 +1,5 @@
 node_modules
 
 .nyc_output
-coverage
-undefined
 npm-debug.log.*
 npm-debug.log

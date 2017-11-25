@@ -1,8 +1,0 @@
-{
-  "development": {
-    "valid_until_const": 60
-  },
-  "production": {
-    "valid_until_const": 60
-  }
-}

@@ -5,7 +5,7 @@ const controller = require('./order.controller');
 
 const route = app => {
 
-  app.get('/order',
+  app.get('/',
     controller.init
   );
 

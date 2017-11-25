@@ -28,7 +28,7 @@ function init(req, res, next) {
         if (!error && response.statusCode == 200) {
             let price = body.result.price;
             return res.render('index', {
-                title: 'Express',
+                title: 'order',
                 price: price
             });
         } else {
@@ -42,9 +42,7 @@ function create(req, res, next) {
     let body = {
 
     }
-    return res.render('index', {
-        result: 'OK'
-    });
+    return res.redirect(302, "/");
 }
 
 module.exports = controller;
