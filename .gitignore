@@ -1,6 +1,5 @@
 node_modules
-
 .nyc_output
 npm-debug.log.*
 npm-debug.log
-src/order/order.controller.js
+/config/key.js

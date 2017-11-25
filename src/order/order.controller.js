@@ -4,6 +4,7 @@
 const service = require('./order.service');
 const request = require('request');
 const crypto = require('crypto');
+const keys = require('../../config/key')
 
 /**
  * 
@@ -33,7 +34,7 @@ function init(req, res, next) {
                 price: price
             });
         } else {
-            console.log('error: ' + response.statusCode);
+            console.log('error: ' + response);
         }
     });
 }
@@ -45,8 +46,8 @@ function create(req, res, next) {
     let losscut = parseInt(req.body.parent) - parseInt(req.body.losscut);
     let number = req.body.number;
 
-    let key = '';
-    let secret = '';
+    let key = keys.API_KEY;
+    let secret = keys.SECRET_API_KEY;
     let timestamp = Date.now().toString();
     let method = 'POST';
     let path = '/v1/me/sendparentorder';
