@@ -1,9 +1,7 @@
-@auth = dev_users ?nriin2017?
-@url = http://localhost:8997/
-@serviceName = category
+@url = https://api.bitflyer.jp/v1
 
 ### Get All
-GET {{url}}{{serviceName}}
+GET {{url}}/me/getpermissions
 
 ### Get one
 GET {{url}}{{serviceName}}/{{id}}

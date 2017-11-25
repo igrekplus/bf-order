@@ -9,7 +9,7 @@ block content
         form(method='POST' action='/order')
           div.form-group
             label(for='parent') Parent: 
-            input#parent.form-control(value=price,type='text',name='parent')
+            input#parent.form-control(value=price,type='text',name='parent',onchange='calc()')
           div.form-group
             .radio
               label(for='buy') BUY
