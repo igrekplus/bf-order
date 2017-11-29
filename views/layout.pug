@@ -9,24 +9,7 @@ html
     link(rel='stylesheet', href='/bootstrap/css/bootstrap-reboot.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
-    script(type='text/javascript').
-      function calc(){
-        var num = $("#number").val();
-        var price = $("#parent").val();;
-        var profitPlus = $("#profit").val();
-        var losscutMinus = $("#losscut").val();
-        var profitValue = parseInt(price) + parseInt(profitPlus)
-        var losscutValue = parseInt(price) - parseInt(losscutMinus)
-        var earning = profitPlus * parseInt(num)
-        var loss = losscutMinus * parseInt(num)
-        $("#profitValue").text(profitValue);
-        $("#losscutValue").text(losscutValue);
-        $("#earning").text(earning);
-        $("#loss").text(loss);
-      }
-      $(document).ready(function() {
-        calc();
-      });
+    script(src='/javascripts/main.js')
   body
     block content
     

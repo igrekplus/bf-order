@@ -41,9 +41,9 @@ function init(req, res, next) {
 
 function create(req, res, next) {
     console.log(req.body)
-
-    let profit = parseInt(req.body.parent) + parseInt(req.body.profit);
-    let losscut = parseInt(req.body.parent) - parseInt(req.body.losscut);
+    let price = req.body.parent.replace(/,/g, '')
+    let profit = parseInt(price) + parseInt(req.body.profit);
+    let losscut = parseInt(price) - parseInt(req.body.losscut);
     let number = req.body.number;
 
     let key = keys.API_KEY;
@@ -55,27 +55,27 @@ function create(req, res, next) {
         "order_method": "IFDOCO",
         "time_in_force": "GTC",
         "parameters": [{
-            "product_code": "FX_BTC_JPY",
-            "condition_type": "LIMIT",
-            "side": "BUY",
-            "price": req.body.parent,
-            "size": number
-        },
-        {
-            "product_code": "FX_BTC_JPY",
-            "condition_type": "LIMIT",
-            "side": "SELL",
-            "price": profit,
-            "size": number
-        },
-        {
-            "product_code": "FX_BTC_JPY",
-            "condition_type": "STOP_LIMIT",
-            "side": "SELL",
-            "price": losscut,
-            "trigger_price": losscut,
-            "size": number
-        }
+                "product_code": "FX_BTC_JPY",
+                "condition_type": "LIMIT",
+                "side": "BUY",
+                "price": price,
+                "size": number
+            },
+            {
+                "product_code": "FX_BTC_JPY",
+                "condition_type": "LIMIT",
+                "side": "SELL",
+                "price": profit,
+                "size": number
+            },
+            {
+                "product_code": "FX_BTC_JPY",
+                "condition_type": "STOP_LIMIT",
+                "side": "SELL",
+                "price": losscut,
+                "trigger_price": losscut,
+                "size": number
+            }
         ]
     });
 
