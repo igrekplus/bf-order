@@ -1,0 +1,18 @@
+[{
+  "id": 0,
+  "child_order_id": "JFX20171201-075237-104129F",
+  "product_code": "FX_BTC_JPY",
+  "side": "BUY",
+  "child_order_type": "LIMIT",
+  "price": 1146000.0,
+  "average_price": 0.0,
+  "size": 2.0,
+  "child_order_state": "ACTIVE",
+  "expire_date": "2017-12-31T07:52:37",
+  "child_order_date": "2017-12-01T07:52:37",
+  "child_order_acceptance_id": "JRF20171201-145234-164072",
+  "outstanding_size": 2.0,
+  "cancel_size": 0.0,
+  "executed_size": 0.0,
+  "total_commission": 0.0
+}]

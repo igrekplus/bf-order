@@ -26,7 +26,9 @@ block content
             div.form-inline
               label.col-sm-3.col-form-label(for='profit') Profit
               select#profit.select.form-control.input-lg.col-sm-6(name='profit',onchange='calc()')
+                option(value='2500') 2,500
                 option(value='5000',selected= true) 5,000
+                option(value='7500',) 7,500
                 option(value='10000') 10,000
                 option(value='15000') 15,000
                 option(value='20000') 20,000
@@ -41,7 +43,8 @@ block content
               label.col-sm-3.col-form-label(for='losscut') Loss Cut
               select#losscut.select.form-control.input-lg.col-sm-6(name='losscut',onchange='calc()')
                 option(value='5000') 5,000
-                option(value='10000',selected= true) 10,000
+                option(value='7500',selected= true) 7,500
+                option(value='10000') 10,000
                 option(value='15000') 15,000
                 option(value='20000') 20,000
                 option(value='25000') 25,000
@@ -51,5 +54,26 @@ block content
             div.form-inline
               label.col-sm-3.col-form-label Loss
               div#loss.form-control.col-sm-6(onchange='calc()',value="25000",readonly)
-            div.form-grop
+            div.form-group
               button.col-sm-3.btn.btn-primary(type='submit') Order
+    .row
+      .col-sm-12
+        table.table-bordered.col-sm-12
+          thead
+            tr
+              th.col-sm-2 price
+              th.col-sm-2 side
+              th.col-sm-2 orderType
+              th.col-sm-4 id
+              tbody
+                tr
+                  each order in orders
+                    td.col-sm-2=order.price
+                    td.col-sm-2=order.side
+                    td.col-sm-2=order.orderType
+                    td.col-sm-2(name='orderId',value=order.orderId) #{order.orderId}
+    .row
+      .col-sm-12
+        form(method='POST' action='/cancel')
+          div.form-group
+            button.btn-primary(type='submit') CancelAll

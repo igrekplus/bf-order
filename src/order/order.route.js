@@ -13,6 +13,10 @@ const route = app => {
     controller.create
   );
 
+  app.post('/cancel',
+    controller.cancel
+  );
+
 };
 
 module.exports = route;
