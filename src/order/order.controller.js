@@ -108,7 +108,7 @@ function create(req, res, next) {
 }
 
 function cancel(req, res, next) {
-    console.log("aaa")
+    console.log("aacancela")
     _cancelAll()
         .then((result) => {
             return res.redirect(302, "/");
